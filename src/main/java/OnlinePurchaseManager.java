@@ -14,7 +14,7 @@ public class OnlinePurchaseManager
     /* to be implemented in part (a) */
     int counter = 0; 
     for (int i = 0; i< purchases.size(); i++){
-      if (purchases(i).isElectronic() == true){
+      if (purchases.get(i).isElectronic()  && purchases.get(i).getMaker().equals(maker)){
         counter++; 
       }
     }
@@ -27,11 +27,12 @@ public class OnlinePurchaseManager
   public boolean hasAdjacentEqualPair()
   {
     /* to be implemented in part (b) */
-    for (int i = 0; i<digitList.size()-1; i++){
-      if (digitList.get(i)>=digitList.get(i+1)) {
-        return false;
+    for (int i = 0; i<purchases.size()-1; i++){
+      if (purchases.get(i).equsls(purchase.get(i+1))) {
+        return true;
       }
     }
+    return false; 
   }
   public OnlinePurchaseManager()
   {
